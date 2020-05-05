@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  schedule: one
+  hour: 1
+  minute: 1
+  coupons: 1
+
+two:
+  schedule: two
+  hour: 1
+  minute: 1
+  coupons: 1

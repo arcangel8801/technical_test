@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event: one
+  week_day: 1
+  current_date: 2020-05-05
+  hour: 1
+  minute: 1
+  coupons: 1
+
+two:
+  event: two
+  week_day: 1
+  current_date: 2020-05-05
+  hour: 1
+  minute: 1
+  coupons: 1

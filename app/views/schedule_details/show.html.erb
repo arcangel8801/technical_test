@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @schedule_detail.schedule %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @schedule_detail.hour %>
+</p>
+
+<p>
+  <strong>Minute:</strong>
+  <%= @schedule_detail.minute %>
+</p>
+
+<p>
+  <strong>Coupons:</strong>
+  <%= @schedule_detail.coupons %>
+</p>
+
+<%= link_to 'Edit', edit_schedule_detail_path(@schedule_detail) %> |
+<%= link_to 'Back', schedule_details_path %>

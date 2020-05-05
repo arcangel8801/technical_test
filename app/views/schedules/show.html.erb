@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @schedule.event %>
+</p>
+
+<p>
+  <strong>Week day:</strong>
+  <%= @schedule.week_day %>
+</p>
+
+<p>
+  <strong>Current date:</strong>
+  <%= @schedule.current_date %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @schedule.hour %>
+</p>
+
+<p>
+  <strong>Minute:</strong>
+  <%= @schedule.minute %>
+</p>
+
+<p>
+  <strong>Coupons:</strong>
+  <%= @schedule.coupons %>
+</p>
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>
