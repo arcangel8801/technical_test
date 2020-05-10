@@ -16,7 +16,6 @@ class ScheduleDetailsTest < ApplicationSystemTestCase
 
     fill_in "Coupons", with: @schedule_detail.coupons
     fill_in "Hour", with: @schedule_detail.hour
-    fill_in "Minute", with: @schedule_detail.minute
     fill_in "Schedule", with: @schedule_detail.schedule_id
     click_on "Create Schedule detail"
 
@@ -30,7 +29,6 @@ class ScheduleDetailsTest < ApplicationSystemTestCase
 
     fill_in "Coupons", with: @schedule_detail.coupons
     fill_in "Hour", with: @schedule_detail.hour
-    fill_in "Minute", with: @schedule_detail.minute
     fill_in "Schedule", with: @schedule_detail.schedule_id
     click_on "Update Schedule detail"
 

@@ -1,19 +1,51 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <h2><%= t('views.show.event_details') %></h2>
+  </div>
 
-<p>
-  <strong>Starts at:</strong>
-  <%= @event.starts_at %>
-</p>
+  <div class="row">
+    <p>
+      <strong><%= t('activerecord.attributes.event.name') %>:</strong>
+      <%= @event.name %>
+    </p>
+  </div>
 
-<p>
-  <strong>Ends at:</strong>
-  <%= @event.ends_at %>
-</p>
+  <div class="row">
+    <p>
+      <strong><%= t('activerecord.attributes.event.starts_at') %>:</strong>
+      <%= @event.starts_at %>
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      <strong><%= t('activerecord.attributes.event.ends_at') %>:</strong>
+      <%= @event.ends_at %>
+    </p>
+  </div>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+  <div class="row">
+
+  <fieldset>
+    <legend><%= t('views.show.information') %></legend>
+
+   <% @event.schedules.each do |schedule| %>
+    <p>
+      <strong> <%= "#{t('date.day_names')[schedule.week_day]}( #{schedule.standard_date})" %>:</strong>
+      <% schedule.schedule_details.each do |detail| %>
+        <%= "#{detail.hour}(#{t('views.show.count_coupons', count: detail.coupons)})" %>
+        |
+      <% end %>
+    </p>
+    <% end %>
+
+  </fieldset>
+
+  </div>
+
+</div>
+
+<%= link_to t('views.show.links.edit_event'), edit_event_path(I18n.locale, @event) %> |
+<%= link_to t('views.show.links.back'), root_path(I18n.locale) %>
+

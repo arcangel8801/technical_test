@@ -2,12 +2,10 @@
 
 one:
   schedule: one
-  hour: 1
-  minute: 1
+  hour: MyString
   coupons: 1
 
 two:
   schedule: two
-  hour: 1
-  minute: 1
+  hour: MyString
   coupons: 1

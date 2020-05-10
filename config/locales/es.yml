@@ -1,0 +1,147 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+es:
+  activerecord:
+    models:
+      event: Evento
+      schedule: Día
+    attributes:
+      event:
+        name: Nombre
+        starts_at: Comienza en
+        ends_at: Finaliza en
+      schedules/schedule_details:
+        hour: Hora
+        coupons: Cupones
+      schedule:
+        week_day: Día de la semana
+      schedules:
+        week_day: Día de la semana
+      schedule_detail:
+        hour: Hora
+        coupons: Cupones
+      schedule_details:
+        hour: Hora
+        coupons: Cupones
+    errors:
+      models:
+        event:
+          attributes:
+            name:
+              blank: es requerido
+            starts_at:
+              blank: es requerido
+            ends_at:
+              blank: es requerido
+        schedule:
+          attributes:
+            week_day:
+              not_a_number: es requerido
+              taken: no puede seleccionar el mismo día más de una vez
+        schedule_detail:
+          attributes:
+            hour:
+              blank: es requerido
+            coupons:
+              not_a_number: debe ser un número
+              greater_than_or_equal_to: debe ser mayor que 0
+
+  helpers:
+    submit:
+      create: 'Crear un %{model}'
+      update: 'Actualizar %{model}'
+
+  date:
+    day_names:
+      - Domingo
+      - Lunes
+      - Martes
+      - Miércoles
+      - Jueves
+      - Viernes
+      - Sabado
+    abbr_day_names:
+      - Dom
+      - Lun
+      - Mar
+      - Mié
+      - Jue
+      - Vie
+      - Sab
+
+  views:
+    index:
+      list_events: Listado de eventos
+      available_actions: Acciones disponibles
+      links:
+        new_event: Nuevo evento
+        back: Ir atrás
+    show:
+      event_details: Detalles del evento
+      information: Información
+      count_coupons:
+        one: 1 cupón
+        other: '%{count} cupones'
+      links:
+        edit_event: Editar evento
+        back: Ir atrás
+    new:
+      new_event: Nuevo evento
+      links:
+        back: Ir atrás
+    edit:
+      edit_event: Actualizar evento
+      links:
+        show: Mostrar
+        back: Ir atrás
+    links:
+      add_schedule: Agregar día
+      add_schedule_details: Agregar hora
+
+  controllers:
+    events:
+      create: Evento creado satisfactoriamente
+      update: Evento actualizado satisfactoriamente
+      destroy: Evento eliminado satisfactoriamente
+
+  messages:
+    buildin_page: Página en construcción
+    confirm_delete: Estás seguro?
+    validate_date_range: La fecha de inicio debe ser menor que la fecha de fin
+    prohibited_being_saved:
+      count_errors:
+        one: 1 error ha ocurrido
+        other: '%{count} errores han ocurrido'
+    notes:
+      title: NOTA
+      only_one_day: Si usted selecciona un día más de una vez, sólo se tendrá en cuenta la primera selección.
+      only_one_hour: Si usted selecciona dentro de un día, la misma hora más de una vez, sólo se tendrá en cuenta la primera selección.

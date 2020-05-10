@@ -1,3 +1,42 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.row .container {
+  margin-bottom: 5px;
+  background-color: #fbfbfb;
+}
+
+.standard-date {
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.select-translate {
+  display: flex;
+  float: right;
+  margin-right: 10px;
+
+  span.active {
+    font-weight: bold;
+  }
+}
+
+.remove-schedule, .remove-detail {
+  cursor: pointer;
+}
+
+.actions {
+  float: right;
+  margin-right: 10px;
+}
+
+.notes {
+ margin-top: -30px;
+ padding-left: 50px;
+ padding-bottom: 20px;
+  p.note {
+    margin-bottom: 0;
+  }
+
+}

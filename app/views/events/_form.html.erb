@@ -1,32 +1,77 @@
+<%= Gon::Base.render_data %>
+
+<p><strong><%= t('messages.notes.title') %>:</strong></p>
+<div class="notes">
+  <p class="note"><%= t('messages.notes.only_one_day') %></p>
+  <p class="note"><%= t('messages.notes.only_one_hour') %></p>
+</div>
 <%= form_with(model: event, local: true) do |form| %>
   <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+      <h2><%= t('messages.prohibited_being_saved.count_errors', count: event.errors.count) %></h2>
       <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :starts_at %>
-    <%= form.date_select :starts_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ends_at %>
-    <%= form.date_select :ends_at %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
+
+  <div class="container">
+    <div class="row">
+      <div class='col-md-6'>
+        <div class="form-group">
+          <%= form.label :name %>
+          <%= form.text_field :name, autofocus: true, placeholder: "Nombre", class: "form-control" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class='col-md-6'>
+        <div class="form-group">
+          <%= form.label :starts_at %>
+          <div class='input-group date' id='datetimepickerStartsAt'>
+            <%= form.text_field :starts_at, class: "form-control" %>
+            <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class="form-group">
+          <%= form.label :ends_at %>
+          <div class='input-group date' id='datetimepickerEndsAt'>
+            <%= form.text_field :ends_at, class: "form-control" %>
+            <span class="input-group-addon">
+             <span class="glyphicon glyphicon-calendar"></span>
+           </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <%= form.fields_for :schedules do |builder| %>
+        <%= render 'schedule_fields', f: builder %>
+      <% end %>
+
+    </div>
+
+  </div>
+
+  <p><%= link_to_add_fields t('views.links.add_schedule'), form, :schedules %></p>
+
 <% end %>

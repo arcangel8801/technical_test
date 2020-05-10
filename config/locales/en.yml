@@ -30,4 +30,118 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      event: Event
+      schedule: Day
+    attributes:
+      event:
+        name: Name
+        starts_at: Starts at
+        ends_at: Ends at
+      schedules/schedule_details:
+        hour: Hour
+        coupons: Coupons
+      schedule:
+        week_day: Week day
+      schedules:
+        week_day: Week day
+      schedule_detail:
+        hour: Hour
+        coupons: Coupons
+      schedule_details:
+        hour: Hour
+        coupons: Coupons
+    errors:
+      models:
+        event:
+          attributes:
+            name:
+              blank: is required
+            starts_at:
+              blank: is required
+            ends_at:
+              blank: is required
+        schedule:
+          attributes:
+            week_day:
+              not_a_number: is required
+              taken: you cannot select the same day more than once
+        schedule_detail:
+          attributes:
+            hour:
+              blank: is required
+            coupons:
+              not_a_number: must be a number
+              greater_than_or_equal_to: must be greater than 0
+
+  helpers:
+    submit:
+      create: 'Create a %{model}'
+      update: 'Update %{model}'
+
+  date:
+    day_names:
+      - Sunday
+      - Monday
+      - Thuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    abbr_day_names:
+      - Sun
+      - Mon
+      - Thu
+      - Wed
+      - Thur
+      - Fri
+      - Sat
+
+  views:
+    index:
+      list_events: List of events
+      available_actions: Available actions
+      links:
+        new_event: New event
+        back: Back
+    show:
+      event_details: Event dedails
+      information: Information
+      count_coupons:
+        one: 1 coupon
+        other: '%{count} coupons'
+      links:
+        edit_event: Edit event
+        back: Back
+    new:
+      new_event: New event
+      links:
+        back: Back
+    edit:
+      edit_event: Update event
+      links:
+        show: Show
+        back: Back
+    links:
+      add_schedule: Add day
+      add_schedule_details: Add hour
+
+  controllers:
+    events:
+      create: Event created successfully
+      update: Event updated successfully
+      destroy: Event deleted successfully
+
+  messages:
+    buildin_page: Page under construction
+    confirm_delete: Are you sure?
+    validate_date_range: The start date must be less than the end date
+    prohibited_being_saved:
+      count_errors:
+        one: 1 error has occurred
+        other: '%{count} errors has ocurred'
+    notes:
+      title: NOTE
+      only_one_day: If you select a day more than once, only the first selection will be considered.
+      only_one_hour: If you select within a day, the same time more than once, only the first selection will be considered.

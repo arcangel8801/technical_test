@@ -1,0 +1,19 @@
+    <div class="col-md-2 removable">
+      <div class="form-group">
+        <%= f.label :hour %>
+        <%= link_to_remove_fields nil, 'detail-to-be-replaced' %>
+        <div class='input-group date datetimepicker-hour'>
+          <%= f.text_field :hour, class: "form-control" %>
+          <span class="input-group-addon">
+                <span class="glyphicon glyphicon-time"></span>
+              </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :coupons %>
+        <div class='input-group'>
+          <%= f.text_field :coupons, placeholder: 0, class: "form-control" %>
+        </div>
+      </div>
+
+    </div>

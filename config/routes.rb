@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :events
-  resources :schedule_details
-  resources :schedules
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  scope '(:locale)', locale: /es|en/, defaults: { locale: 'es' } do
+    root 'events#index'
+    resources :events, except: :index
+    resources :schedules
+    resources :schedule_details
+  end
+
+
 end
